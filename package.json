@@ -5,7 +5,8 @@
   "description": "LeaveEasy — จุดเริ่มต้นของใบงาน ADT-RAISE Batch 2 Module 2",
   "scripts": {
     "dev": "serve -l 3000 .",
-    "seed": "node scripts/seed.mjs"
+    "seed": "node scripts/seed.mjs",
+    "seed:auth": "node scripts/seed-auth-users.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
