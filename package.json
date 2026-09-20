@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "serve -l 3000 .",
     "seed": "node scripts/seed.mjs",
-    "seed:auth": "node scripts/seed-auth-users.mjs"
+    "seed:auth": "node scripts/seed-auth-users.mjs",
+    "reset:demo": "node scripts/reset-demo-status.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
