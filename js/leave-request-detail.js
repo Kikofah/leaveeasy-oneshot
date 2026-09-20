@@ -18,7 +18,7 @@
     return;
   }
 
-  var ความเห็น = window.LEAVE_DATA.approvals.filter(function (c) { return c.requestId === ใบ.id; });
+  var ความเห็น = window.LEAVE_DATA.approvals.filter(function (c) { return c.leaveRequestId === ใบ.id; });
 
   วาดใบลา();
   วาดความเห็น();
@@ -105,7 +105,7 @@
     // สัปดาห์ที่ 6 ยังไม่มีล็อกอิน จึงสมมติว่าผู้เขียนคือ สมหญิง รักงาน
     ความเห็น.push({
       id: "ap-ใหม่-" + Date.now(),
-      requestId: ใบ.id,
+      leaveRequestId: ใบ.id,
       authorId: "u002", authorName: "สมหญิง รักงาน",
       message: ข้อความ,
       createdAt: เวลาตอนนี้()
