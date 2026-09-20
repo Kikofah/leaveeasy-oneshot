@@ -1,0 +1,18 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "leaveeasy-spec.md",
+      "fixit-spec.md",
+      "README.md",
+      "scripts/**",
+      ".claude/**"
+    ]
+  }
+}
