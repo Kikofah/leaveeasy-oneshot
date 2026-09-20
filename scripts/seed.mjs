@@ -6,25 +6,29 @@
 // ไม่ใช่ส่วนหนึ่งของเว็บแอป และห้ามเรียกจากหน้าเว็บใด ๆ ทั้งสิ้น
 // (สัปดาห์ 6 ห้ามเพิ่ม/แก้/ลบลงฐานข้อมูลจากหน้าเว็บ)
 //
-// ⚠️⚠️ ก่อนรันสคริปต์นี้จริง ให้ตรวจสอบก่อนว่าคอลเลกชัน users /
-// leaveTypes / leaveRequests ไม่มีเอกสารอื่นที่ไม่ตรงกับ ID ในหัวข้อ 7
-// ค้างอยู่ — ตอนตรวจสอบรอบล่าสุด (2026-09-20) พบว่า project นี้มี
-// เอกสารแปลกปลอมค้างอยู่จริง ซึ่งบางรายการมีข้อมูลจริงของบุคคล
-// (ชื่อ-อีเมลจริง ไม่ใช่ข้อมูลสมมติตามสเปก) ปนอยู่ด้วย — ห้ามรันสคริปต์นี้
-// จนกว่าจะตัดสินใจแล้วว่าจะจัดการเอกสารเหล่านั้นอย่างไร (ดูรายงานของ
-// leaveeasy-builder ประกอบการตัดสินใจ) สคริปต์นี้ "set" เฉพาะ ID ที่ระบุ
-// ไว้ด้านล่างเท่านั้น จะไม่แตะ/ไม่ลบเอกสารอื่นที่มีอยู่ก่อน
+// ⚠️ อัปเดต 2026-09-20: พบว่า project นี้มีเอกสารแปลกปลอมค้างอยู่จริง
+// (บางรายการมีข้อมูลจริงของบุคคลปนอยู่ ไม่ตรงสเปก) ผู้ใช้ตัดสินใจแล้วว่า
+// ให้ "ลบข้อมูลเก่าทั้งหมด" ในโฟลเดอร์ users / leaveTypes / leaveRequests
+// (รวม subcollection approvals) ก่อน แล้วค่อยรันสคริปต์นี้ใส่ข้อมูลใหม่ทั้งชุด
 //
-// วิธีรัน (หลังตัดสินใจเรื่องเอกสารแปลกปลอมแล้ว และเปิดสิทธิ์ Admin ได้แล้ว):
-//   1. เตรียม credential ระดับ Admin อย่างใดอย่างหนึ่ง:
+// วิธีรัน — ทำตามลำดับนี้จาก terminal จริงของเครื่องคุณ (ไม่ใช่ sandbox):
+//   0. cd ไปที่โฟลเดอร์โปรเจกต์นี้ + source ~/.nvm/nvm.sh && nvm use 22
+//   1. ลบข้อมูลเก่าทั้งหมดด้วย Firebase CLI (ใช้ล็อกอินที่มีอยู่แล้ว ไม่ต้องมี
+//      credential เพิ่ม) — ต้องใส่ --recursive เพื่อลบ subcollection approvals
+//      ที่ซ้อนอยู่ในแต่ละใบลาไปด้วย:
+//        firebase firestore:delete users --project leaveeasy-witchudakhamsom --recursive --force
+//        firebase firestore:delete leaveRequests --project leaveeasy-witchudakhamsom --recursive --force
+//        firebase firestore:delete leaveTypes --project leaveeasy-witchudakhamsom --recursive --force
+//   2. เตรียม credential ระดับ Admin สำหรับสคริปต์นี้ (คนละอย่างกับข้อ 1):
 //        gcloud auth application-default login
-//      หรือดาวน์โหลด service account key แล้วตั้ง
-//        export GOOGLE_APPLICATION_CREDENTIALS=/path/to/key.json
-//   2. npm install   (ติดตั้ง firebase-admin ครั้งแรก)
-//   3. node scripts/seed.mjs
+//   3. npm install   (ติดตั้ง firebase-admin ครั้งแรก ถ้ายังไม่เคยทำ)
+//   4. npm run seed   (หรือ node scripts/seed.mjs)
+//   5. เปิด firestore.rules กลับเป็น allow read: if true; allow write: if false;
+//      แล้ว firebase deploy --only firestore:rules --project leaveeasy-witchudakhamsom
 //
 // ใช้ .set() กับ document id คงที่ตามสเปก (u001, lt001, lr001, ...)
 // รันซ้ำได้อย่างปลอดภัย (idempotent) — เขียนทับให้ตรงสเปกทุกครั้ง ไม่สร้างซ้ำ
+// แต่ถ้าไม่ทำข้อ 1 ก่อน เอกสารแปลกปลอมที่ ID ไม่ตรงสเปกจะยังค้างอยู่
 // ─────────────────────────────────────────────────────────────
 
 import { initializeApp, applicationDefault } from "firebase-admin/app";
