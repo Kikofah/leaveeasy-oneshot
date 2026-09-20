@@ -87,30 +87,28 @@ window.LEAVE_DATA = {
 
   // 📁 approvals — ความเห็นการอนุมัติ
   // ตอนใส่ลง Firestore ความเห็นเหล่านี้จะกลายเป็น "โฟลเดอร์ย่อย" ของใบลาแต่ละใบ
-  // ตรงนี้จึงต้องมีช่อง leaveRequestId ไว้บอกว่าเป็นความเห็นของใบไหน
-  // (ชื่อช่องตรงตามตาราง ERD หัวข้อ 5.1 — บน Firestore จริงไม่มีช่องนี้
-  // เพราะความสัมพันธ์บอกด้วยการซ้อน subcollection แทน)
+  // ตรงนี้จึงต้องมีช่อง requestId ไว้บอกว่าเป็นความเห็นของใบไหน
   approvals: [
     {
-      id: "ap001", leaveRequestId: "lr001",
+      id: "ap001", requestId: "lr001",
       authorId: "u002", authorName: "สมหญิง รักงาน",
       message: "รับเรื่องแล้ว ขอดูตารางงานของทีมช่วงนั้นก่อนนะครับ",
       createdAt: "2026-09-01 13:40"
     },
     {
-      id: "ap002", leaveRequestId: "lr001",
+      id: "ap002", requestId: "lr001",
       authorId: "u003", authorName: "สมศรี ตั้งใจ",
       message: "ตรวจแล้ว วันลาพักร้อนคงเหลือครอบคลุมช่วงที่ขอ ไม่ติดขัดฝั่งฝ่ายบุคคล",
       createdAt: "2026-09-02 10:05"
     },
     {
-      id: "ap003", leaveRequestId: "lr002",
+      id: "ap003", requestId: "lr002",
       authorId: "u002", authorName: "สมหญิง รักงาน",
       message: "อนุมัติแล้ว พักผ่อนให้เต็มที่ งานที่ค้างไว้เดี๋ยวทีมช่วยดูให้",
       createdAt: "2026-08-24 09:20"
     },
     {
-      id: "ap004", leaveRequestId: "lr004",
+      id: "ap004", requestId: "lr004",
       authorId: "u002", authorName: "สมหญิง รักงาน",
       message: "ช่วงนั้นทีมมีงานส่งมอบพอดี ขอเลื่อนเป็นสัปดาห์ถัดไปได้ไหมครับ",
       createdAt: "2026-09-20 15:10"

@@ -1,46 +1,52 @@
 // ─────────────────────────────────────────────────────────────
 // js/leave-requests.js — หน้าที่ 1 รายการใบลา
-// สัปดาห์ที่ 6: อ่านข้อมูลจริงจากโฟลเดอร์ leaveRequests บน Firestore
-// (ตัว R ตัวเดียวใน CRUD — ยังไม่มีการเขียน/แก้/ลบจากหน้านี้)
+// สัปดาห์ที่ 6: อ่านข้อมูลจริงจาก Firestore (โฟลเดอร์ leaveRequests)
+// employee เห็นเฉพาะใบลาของตัวเอง · manager/hr เห็นทุกใบ (ตาม ACL.md)
 // ─────────────────────────────────────────────────────────────
 
-import { db } from "./firebase-init.js";
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-(async function () {
+(function () {
   var กล่อง = document.getElementById("ผลลัพธ์");
-
-  // 1) อ่านใบลาทั้งหมดจาก Firestore จริง
-  var ใบลาจากฐานข้อมูล = [];
-  try {
-    var สแนปช็อต = await getDocs(collection(db, "leaveRequests"));
-    สแนปช็อต.forEach(function (เอกสาร) {
-      var ใบ = เอกสาร.data();
-      ใบ.id = เอกสาร.id;
-      ใบลาจากฐานข้อมูล.push(ใบ);
-    });
-  } catch (err) {
-    console.error("โหลดข้อมูลใบลาจาก Firestore ไม่สำเร็จ:", err);
-    กล่อง.innerHTML = "<p>โหลดข้อมูลจากฐานข้อมูลไม่สำเร็จ กรุณาลองใหม่อีกครั้ง</p>";
-    return;
-  }
-
-  // 2) ใบลาที่เพิ่งกด "บันทึก" จากหน้ายื่นใบลาใหม่ (สัปดาห์นี้ยังไม่บันทึกจริงลง Firestore
-  //    เก็บไว้ใน sessionStorage ชั่วคราวก่อน จะหายเมื่อปิดเบราว์เซอร์ — แก้เป็นการบันทึกจริงสัปดาห์ที่ 7)
-  var ใบลาที่ยื่นใหม่ = JSON.parse(sessionStorage.getItem("ใบลาที่ยื่นใหม่") || "[]");
-  var ใบลาทั้งหมด = ใบลาจากฐานข้อมูล.concat(ใบลาที่ยื่นใหม่);
 
   // ถ้ามีสถานะติดมาท้าย URL ให้กรองเฉพาะสถานะนั้น
   var สถานะที่กรอง = ค่าจากURL("status");
   if (สถานะที่กรอง) {
-    ใบลาทั้งหมด = ใบลาทั้งหมด.filter(function (ใบ) { return ใบ.status === สถานะที่กรอง; });
     document.querySelector(".subtitle").textContent =
       "กำลังแสดงเฉพาะใบลาที่สถานะ " + สถานะที่กรอง + " · กดเมนู รายการใบลา เพื่อดูทั้งหมด";
   }
 
-  แสดงตาราง(ใบลาทั้งหมด);
+  firebase.auth().onAuthStateChanged(function (ผู้ใช้) {
+    if (!ผู้ใช้) {
+      location.href = "login.html";
+      return;
+    }
+
+    db.collection("users").doc(ผู้ใช้.uid).get().then(function (สแนปช็อตผู้ใช้) {
+      var บทบาท = สแนปช็อตผู้ใช้.exists ? สแนปช็อตผู้ใช้.data().role : "employee";
+
+      var คำสั่งดึงข้อมูล = db.collection("leaveRequests");
+      if (บทบาท === "employee") {
+        คำสั่งดึงข้อมูล = คำสั่งดึงข้อมูล.where("requesterId", "==", ผู้ใช้.uid);
+      }
+      if (สถานะที่กรอง) {
+        คำสั่งดึงข้อมูล = คำสั่งดึงข้อมูล.where("status", "==", สถานะที่กรอง);
+      }
+
+      return คำสั่งดึงข้อมูล.get();
+    }).then(function (สแนปช็อต) {
+      var รายการ = สแนปช็อต.docs.map(function (เอกสาร) {
+        var ข้อมูล = เอกสาร.data();
+        ข้อมูล.id = เอกสาร.id;
+        return ข้อมูล;
+      });
+      แสดงตาราง(รายการ);
+    }).catch(function (ข้อผิดพลาด) {
+      กล่อง.innerHTML = "<p>โหลดข้อมูลจาก Firestore ไม่สำเร็จ: " + esc(ข้อผิดพลาด.message) + "</p>";
+    });
+  });
 
   function แสดงตาราง(รายการ) {
+    document.getElementById("จำนวนทั้งหมด").textContent = "ทั้งหมด " + รายการ.length + " ใบ";
+
     if (รายการ.length === 0) {
       กล่อง.innerHTML = "<p>ยังไม่มีใบขอลาในระบบ</p>";
       return;

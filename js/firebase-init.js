@@ -1,14 +1,23 @@
 // ─────────────────────────────────────────────────────────────
-// js/firebase-init.js — เปิดใช้งาน Firebase App + Firestore (สัปดาห์ที่ 6)
+// js/firebase-init.js — เชื่อมต่อ Firebase / Firestore / Auth
 //
-// โหลด SDK จาก CDN แบบ ES module ตรง ๆ ไม่มี build step / ไม่มี framework
-// เวอร์ชันถูกล็อกไว้ (12.19.0) เพื่อไม่ให้พังเงียบ ๆ ตอน CDN อัปเดตเวอร์ชันใหม่
+// ต้องโหลดหลัง <script> ของ firebase-app-compat.js, firebase-firestore-compat.js
+// และ firebase-auth-compat.js เสมอ (ดูตัวอย่างใน leave-requests.html)
+//
+// apiKey ของ Firebase web config ไม่ใช่ความลับ — ฝั่งเบราว์เซอร์เห็นได้เสมอ
+// ความปลอดภัยจริงมาจาก Security Rules (จะเขียนสัปดาห์ที่ 8)
 // ─────────────────────────────────────────────────────────────
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-import { firebaseConfig } from "./firebase-config.js";
+var firebaseConfig = {
+  apiKey: "AIzaSyAp_Z5RIad500ihCo9HZ2vHpmDs87Q7qu8",
+  authDomain: "leaveeasy-witchudakhamsom.firebaseapp.com",
+  projectId: "leaveeasy-witchudakhamsom",
+  storageBucket: "leaveeasy-witchudakhamsom.firebasestorage.app",
+  messagingSenderId: "940858551147",
+  appId: "1:940858551147:web:18e8799fd33668d97cba2e",
+  measurementId: "G-FETR1PWLR8"
+};
 
-const app = initializeApp(firebaseConfig);
-
-export const db = getFirestore(app);
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+var auth = firebase.auth();
