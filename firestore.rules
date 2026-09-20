@@ -1,25 +1,83 @@
 // ─────────────────────────────────────────────────────────────
-// firestore.rules — กฎขั้นต่ำของสัปดาห์ที่ 7: ต้องล็อกอินก่อน ถึงอ่าน/เขียนได้
+// firestore.rules
 //
-// แก้บั๊กสัปดาห์ที่ 9 (เทสต์จับได้): ก่อนหน้านี้กฎถูกทับกลับไปเป็นเวอร์ชัน
-// สัปดาห์ 6 (allow write: if false) ทำให้สมัครสมาชิก (เขียน users/{uid})
-// และยื่นใบลาใหม่ (เขียน leaveRequests) ล้มเหลวด้วย "Missing or
-// insufficient permissions." สำหรับผู้ใช้ทุกคนที่ล็อกอินอยู่จริง
+// สัปดาห์ที่ 7: กฎขั้นต่ำ "ต้องล็อกอินก่อน ถึงอ่าน/เขียนได้"
+// (แก้บั๊กสัปดาห์ที่ 9 ที่เทสต์จับได้: ก่อนหน้านี้กฎถูกทับกลับไปเป็น
+// เวอร์ชันสัปดาห์ 6 (allow write: if false) ทำให้สมัครสมาชิกและยื่น
+// ใบลาใหม่ล้มเหลวด้วย "Missing or insufficient permissions.")
 //
-// กฎนี้ครอบทุกโฟลเดอร์รวม subcollection (approvals, aiLog ฯลฯ)
-// ด้วย match /{document=**}
+// แก้บั๊กความปลอดภัยเพิ่ม (leaveeasy-tester เจอ): employee ที่ล็อกอินอยู่
+// เปิด leave-request-detail.html?id=<ของคนอื่น> ผ่าน URL ตรงๆ แล้ว
+// Firestore .get() เอกสารสำเร็จจริง (แค่ JS เลือกไม่ render) เพราะกฎเดิม
+// เช็คแค่ "ล็อกอินหรือไม่" ไม่เช็คความเป็นเจ้าของเอกสารเลย
 //
-// ยังไม่ใช่กฎรายห้องตามบทบาท employee / manager / hr — นั่นคือ
-// "เช็กลิสต์ 5 ข้อ" ของสัปดาห์ที่ 8 ซึ่งต้องตรวจ/ทำผ่าน leaveeasy-reviewer
-// แยกต่างหาก ไม่ใช่ส่วนของการแก้บั๊กนี้
+// จึงเพิ่มเงื่อนไขระดับเอกสารเฉพาะ leaveRequests (+ subcollection
+// approvals) เท่านั้น: อ่านได้เฉพาะเจ้าของใบลาเอง หรือ role manager/hr
+// ส่วน users, leaveTypes, และ subcollection aiLog ยังคงกฎขั้นต่ำเดิมเป๊ะ
+// (ไม่อยู่ในขอบเขตที่อนุมัติให้แก้รอบนี้)
+//
+// ⚠️ Firestore rules รวมกันแบบ OR ข้าม match block ที่ทับ path เดียวกัน
+// จึงต้องแจกแจง match แยกตาม collection ที่มีจริง แทนการใช้
+// match /{document=**} ตัวเดียวครอบทุกอย่างเหมือนก่อนหน้านี้ — ถ้ายังมี
+// wildcard กว้างครอบอยู่ด้วย กฎที่เข้มกว่าของ leaveRequests จะไม่มีผลเลย
+//
+// ยังไม่ใช่กฎรายห้องครบชุดตามเช็กลิสต์ 5 ข้อของสัปดาห์ที่ 8 (เช่น
+// update/delete ของ leaveRequests ยังไม่จำกัดราย role) — ส่วนนั้นเป็นของ
+// leaveeasy-reviewer ทำแยกต่างหาก
 // ─────────────────────────────────────────────────────────────
 
 rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if request.auth != null;
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // อ่าน role ของผู้ใช้ที่ล็อกอินอยู่ จากเอกสาร users/{uid}
+    function isManagerOrHr() {
+      return isSignedIn() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['manager', 'hr'];
+    }
+
+    // ── users, leaveTypes: กฎขั้นต่ำเดิมเป๊ะ ไม่แตะรอบนี้ ──
+    match /users/{userId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /leaveTypes/{typeId} {
+      allow read, write: if isSignedIn();
+    }
+
+    // ── leaveRequests: เพิ่มเงื่อนไขระดับเอกสาร ตามที่อนุมัติ ──
+    match /leaveRequests/{requestId} {
+      // อ่านได้เฉพาะเจ้าของใบลาเอง หรือ manager/hr เท่านั้น
+      allow read: if isSignedIn() &&
+        (resource.data.requesterId == request.auth.uid || isManagerOrHr());
+
+      // สร้างใบลาใหม่ได้ ถ้า requesterId ตรงกับ uid ตัวเอง (กันบั๊ก #2 กลับมา)
+      allow create: if isSignedIn() &&
+        request.resource.data.requesterId == request.auth.uid;
+
+      // update/delete: ยังคงกฎขั้นต่ำเดิม (ต้องล็อกอินก่อน) — การจำกัดสิทธิ์
+      // ราย role แบบเต็ม (เช่น employee ห้ามเปลี่ยนสถานะ, ลบได้เฉพาะใบตัวเอง)
+      // อยู่ในเช็กลิสต์ 5 ข้อของสัปดาห์ 8 ที่ leaveeasy-reviewer จะทำแยกต่างหาก
+      allow update, delete: if isSignedIn();
+
+      match /approvals/{approvalId} {
+        // อ่านความเห็นได้เฉพาะเจ้าของใบลานั้น หรือ manager/hr เท่านั้น
+        allow read: if isSignedIn() &&
+          (get(/databases/$(database)/documents/leaveRequests/$(requestId)).data.requesterId == request.auth.uid
+            || isManagerOrHr());
+        // เขียนความเห็น: กฎขั้นต่ำเดิมเป๊ะ ไม่แตะรอบนี้
+        allow write: if isSignedIn();
+      }
+
+      match /aiLog/{logId} {
+        // subcollection ของฟีเจอร์ AI สรุปใบลา (สัปดาห์ 8) — ไม่อยู่ในขอบเขตที่ขอ คงกฎเดิม
+        allow read, write: if isSignedIn();
+      }
     }
   }
 }
