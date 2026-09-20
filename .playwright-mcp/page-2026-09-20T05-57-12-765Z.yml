@@ -1,0 +1,20 @@
+- generic [active] [ref=f18e1]:
+  - generic [ref=f18e3]:
+    - generic [ref=f18e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f18e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f18e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f18e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f18e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "ประเภทการลา" [ref=f18e9] [cursor=pointer]:
+      - /url: leave-types.html
+  - generic [ref=f18e10]:
+    - heading "รายการใบลา" [level=1] [ref=f18e11]
+    - paragraph [ref=f18e12]: ใบขอลาทั้งหมดในระบบ กดที่แถวเพื่อดูรายละเอียด
+    - paragraph
+    - link "+ ยื่นใบลาใหม่" [ref=f18e14] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - paragraph [ref=f18e16]: กำลังโหลดข้อมูล…

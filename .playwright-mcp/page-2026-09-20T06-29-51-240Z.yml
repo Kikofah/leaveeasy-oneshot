@@ -1,0 +1,21 @@
+- generic [active] [ref=f54e1]:
+  - generic [ref=f54e3]:
+    - generic [ref=f54e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f54e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f54e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f54e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f54e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f54e16]:
+      - generic [ref=f54e17]: 👤 ผู้ทดสอบ ความปลอดภัย 2
+      - text: ·
+      - link "ออกจากระบบ" [ref=f54e18] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f54e10]:
+    - heading "รายละเอียดใบลา" [level=1] [ref=f54e11]
+    - paragraph [ref=f54e19]: "โหลดข้อมูลจาก Firestore ไม่สำเร็จ: Missing or insufficient permissions."
+    - link "← กลับไปหน้ารายการ" [ref=f54e15] [cursor=pointer]:
+      - /url: leave-requests.html

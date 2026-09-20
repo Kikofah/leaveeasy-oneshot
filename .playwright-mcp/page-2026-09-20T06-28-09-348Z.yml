@@ -1,0 +1,44 @@
+- generic [ref=f46e1]:
+  - generic [ref=f46e3]:
+    - generic [ref=f46e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f46e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f46e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f46e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f46e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f46e30]:
+      - generic [ref=f46e31]: 👤 ผู้ทดสอบ Regression Run
+      - text: ·
+      - link "ออกจากระบบ" [ref=f46e32] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f46e10]:
+    - heading "ยื่นใบลาใหม่" [level=1] [ref=f46e11]
+    - paragraph [ref=f46e12]: กรอกให้ครบทุกช่อง แล้วกดบันทึก · ใบลาใหม่จะมีสถานะ รอพิจารณา เสมอ
+    - generic [ref=f46e13]:
+      - generic [ref=f46e33]: ⚠️ กรอกไม่ครบ — ต้องกรอกทุกช่องก่อนกดบันทึก
+      - generic [ref=f46e14]:
+        - generic [ref=f46e15]: หัวข้อ
+        - textbox "หัวข้อ" [ref=f46e16]:
+          - /placeholder: เช่น ลาพักร้อนไปเที่ยวกับครอบครัว
+        - generic [ref=f46e17]: เหตุผลการลา
+        - textbox "เหตุผลการลา" [ref=f46e18]:
+          - /placeholder: เล่าเหตุผลสั้น ๆ ให้หัวหน้าเข้าใจ
+          - text: ทดสอบ validation หัวข้อว่าง regression run
+        - button "🤖 ให้ AI ช่วยจัดประเภทการลา" [ref=f46e20] [cursor=pointer]
+        - generic [ref=f46e21]: ประเภทการลา
+        - combobox "ประเภทการลา" [ref=f46e22]:
+          - option "— เลือกประเภทการลา —"
+          - option "ลาพักร้อน"
+          - option "ลาป่วย"
+          - option "ลากิจ" [selected]
+        - generic [ref=f46e23]: วันที่เริ่มลา
+        - textbox "วันที่เริ่มลา" [ref=f46e24]: 2026-12-15
+        - generic [ref=f46e25]: วันที่สิ้นสุด
+        - textbox "วันที่สิ้นสุด" [ref=f46e26]: 2026-12-15
+        - generic [ref=f46e27]:
+          - button "บันทึก" [active] [ref=f46e28] [cursor=pointer]
+          - link "ยกเลิก" [ref=f46e29] [cursor=pointer]:
+            - /url: leave-requests.html

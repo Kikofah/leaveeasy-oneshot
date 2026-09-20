@@ -26,6 +26,14 @@ playwright-report/
 playwright/.cache/
 
 
+# ── ไฟล์ที่มีคีย์ลับ (API key) ห้ามส่งขึ้น GitHub เด็ดขาด ──
+# js/config.local.js เก็บ OPENROUTER_API_KEY จริงสำหรับปุ่มผู้ช่วย AI
+# (สัปดาห์ที่ 8) — ใช้ js/config.local.example.js เป็นต้นแบบแล้วก็อปปี้
+# มาใส่คีย์ของตัวเอง ไฟล์ config.local.js จะไม่ถูกติดตาม (track) โดย git เลย
+js/config.local.js
+*.local.js
+
+
 # ─────────────────────────────────────────────────────────────
 # ✅ วิธีตรวจว่าใช้ได้จริง — ก่อน push ทุกครั้ง พิมพ์บอก Claude ว่า
 #

@@ -1,0 +1,29 @@
+- generic [active] [ref=f52e1]:
+  - generic [ref=f52e3]:
+    - generic [ref=f52e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f52e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f52e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f52e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f52e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "เข้าสู่ระบบ" [ref=f52e10] [cursor=pointer]:
+      - /url: login.html
+  - generic [ref=f52e11]:
+    - heading "เข้าสู่ระบบ" [level=1] [ref=f52e12]
+    - paragraph [ref=f52e13]: เข้าสู่ระบบด้วยอีเมลและรหัสผ่านที่สมัครไว้
+    - generic [ref=f52e14]:
+      - generic [ref=f52e15]:
+        - generic [ref=f52e16]: อีเมล
+        - textbox "อีเมล" [ref=f52e17]:
+          - /placeholder: เช่น somchai@example.com
+        - generic [ref=f52e18]: รหัสผ่าน
+        - textbox "รหัสผ่าน" [ref=f52e19]:
+          - /placeholder: รหัสผ่านของคุณ
+        - button "เข้าสู่ระบบ" [ref=f52e21] [cursor=pointer]
+      - paragraph [ref=f52e22]:
+        - text: ยังไม่มีบัญชี?
+        - link "สมัครสมาชิก" [ref=f52e23] [cursor=pointer]:
+          - /url: signup.html

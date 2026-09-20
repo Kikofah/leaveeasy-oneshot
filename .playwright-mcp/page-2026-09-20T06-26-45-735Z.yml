@@ -1,0 +1,38 @@
+- generic [active] [ref=f41e1]:
+  - generic [ref=f41e3]:
+    - generic [ref=f41e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f41e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f41e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f41e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f41e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f41e25]:
+      - generic [ref=f41e26]: 👤 สมหญิง รักงาน
+      - text: ·
+      - link "ออกจากระบบ" [ref=f41e27] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f41e10]:
+    - heading "สมัครสมาชิก" [level=1] [ref=f41e11]
+    - paragraph [ref=f41e12]: สมัครแล้วเข้าสู่ระบบได้ทันที บทบาทเริ่มต้นคือผู้ขอลา
+    - generic [ref=f41e13]:
+      - generic [ref=f41e14]:
+        - generic [ref=f41e15]: ชื่อ-นามสกุล
+        - textbox "ชื่อ-นามสกุล" [ref=f41e16]:
+          - /placeholder: เช่น สมชาย ใจดี
+          - text: ผู้ทดสอบ Regression Run
+        - generic [ref=f41e17]: อีเมล
+        - textbox "อีเมล" [ref=f41e18]:
+          - /placeholder: เช่น somchai@example.com
+          - text: leaveeasy.tester.regression1@example.com
+        - generic [ref=f41e19]: รหัสผ่าน
+        - textbox "รหัสผ่าน" [ref=f41e20]:
+          - /placeholder: อย่างน้อย 6 ตัวอักษร
+          - text: Test1234!
+        - button "กำลังสมัคร…" [disabled] [ref=f41e28]
+      - paragraph [ref=f41e23]:
+        - text: มีบัญชีอยู่แล้ว?
+        - link "เข้าสู่ระบบ" [ref=f41e24] [cursor=pointer]:
+          - /url: login.html

@@ -1,0 +1,23 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e3]:
+    - generic [ref=f8e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f8e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f8e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f8e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f8e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f8e9]:
+      - generic [ref=f8e10]: 👤 ผู้ทดสอบ Playwright Retest
+      - text: ·
+      - link "ออกจากระบบ" [ref=f8e11] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f8e12]:
+    - heading "รายการใบลา" [level=1] [ref=f8e13]
+    - paragraph [ref=f8e14]: ใบขอลาทั้งหมดในระบบ กดที่แถวเพื่อดูรายละเอียด
+    - paragraph [ref=f8e15]: ทั้งหมด 0 ใบ
+    - link "+ ยื่นใบลาใหม่" [ref=f8e17] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - paragraph [ref=f8e19]: ยังไม่มีใบขอลาในระบบ

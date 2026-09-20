@@ -1,0 +1,37 @@
+- generic [active] [ref=f53e1]:
+  - generic [ref=f53e3]:
+    - generic [ref=f53e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f53e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f53e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f53e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f53e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f53e9]:
+      - generic [ref=f53e10]: 👤 ผู้ทดสอบ ความปลอดภัย 2
+      - text: ·
+      - link "ออกจากระบบ" [ref=f53e11] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f53e12]:
+    - heading "รายการใบลา" [level=1] [ref=f53e13]
+    - paragraph [ref=f53e14]: ใบขอลาทั้งหมดในระบบ กดที่แถวเพื่อดูรายละเอียด
+    - paragraph [ref=f53e15]: ทั้งหมด 1 ใบ
+    - link "+ ยื่นใบลาใหม่" [ref=f53e17] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - table [ref=f53e19]:
+      - rowgroup [ref=f53e20]:
+        - row [ref=f53e21]:
+          - columnheader "หัวข้อ" [ref=f53e22]
+          - columnheader "ประเภทการลา" [ref=f53e23]
+          - columnheader "สถานะ" [ref=f53e24]
+          - columnheader "ผู้ขอลา" [ref=f53e25]
+          - columnheader "วันที่ลา" [ref=f53e26]
+      - rowgroup [ref=f53e27]:
+        - row [ref=f53e28]:
+          - cell "ทดสอบ regression หลังแก้ rules ความปลอดภัย" [ref=f53e29]
+          - cell "ลาป่วย" [ref=f53e30]
+          - cell "รอพิจารณา" [ref=f53e31]
+          - cell "ผู้ทดสอบ ความปลอดภัย 2" [ref=f53e33]
+          - cell "2026-11-10 ถึง 2026-11-10" [ref=f53e34]

@@ -1,0 +1,65 @@
+- generic [active] [ref=f26e1]:
+  - generic [ref=f26e3]:
+    - generic [ref=f26e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f26e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f26e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f26e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f26e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "ประเภทการลา" [ref=f26e9] [cursor=pointer]:
+      - /url: leave-types.html
+    - generic [ref=f26e16]:
+      - generic [ref=f26e17]: 👤 สมศรี ตั้งใจ
+      - text: ·
+      - link "ออกจากระบบ" [ref=f26e18] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f26e10]:
+    - heading "รายละเอียดใบลา" [level=1] [ref=f26e11]
+    - generic [ref=f26e12]:
+      - generic [ref=f26e19]:
+        - generic [ref=f26e20]: หัวข้อ
+        - generic [ref=f26e21]: ลาพักร้อนไปเที่ยวกับครอบครัว
+      - generic [ref=f26e22]:
+        - generic [ref=f26e23]: เหตุผลการลา
+        - generic [ref=f26e24]: วางแผนเดินทางไปต่างจังหวัดกับครอบครัว จองที่พักไว้ล่วงหน้าแล้ว
+      - generic [ref=f26e25]:
+        - generic [ref=f26e26]: ประเภทการลา
+        - generic [ref=f26e27]: ลาพักร้อน
+      - generic [ref=f26e28]:
+        - generic [ref=f26e29]: วันที่ลา
+        - generic [ref=f26e30]: 2026-09-07 ถึง 2026-09-09
+      - generic [ref=f26e31]:
+        - generic [ref=f26e32]: ผู้ขอลา
+        - generic [ref=f26e33]: สมชาย ใจดี
+      - generic [ref=f26e34]:
+        - generic [ref=f26e35]: ผู้อนุมัติ
+        - generic [ref=f26e36]: สมหญิง รักงาน
+      - generic [ref=f26e37]:
+        - generic [ref=f26e38]: สถานะ
+        - generic [ref=f26e39]: รอพิจารณา
+      - generic [ref=f26e41]:
+        - generic [ref=f26e42]: วันที่ยื่น
+        - generic [ref=f26e43]: 2026-09-01 09:15
+      - button "🤖 ให้ AI สรุปใบลานี้" [ref=f26e46] [cursor=pointer]
+      - generic [ref=f26e47]:
+        - button "อนุมัติ" [ref=f26e48] [cursor=pointer]
+        - button "ไม่อนุมัติ" [ref=f26e49] [cursor=pointer]
+        - button "ลบใบลานี้" [ref=f26e50] [cursor=pointer]
+    - generic [ref=f26e51]:
+      - heading "ความเห็นการอนุมัติ" [level=2] [ref=f26e52]
+      - generic [ref=f26e53]:
+        - generic [ref=f26e54]:
+          - generic [ref=f26e55]: สมหญิง รักงาน · 2026-09-01 13:40
+          - generic [ref=f26e56]: รับเรื่องแล้ว ขอดูตารางงานของทีมช่วงนั้นก่อนนะครับ
+        - generic [ref=f26e57]:
+          - generic [ref=f26e58]: สมศรี ตั้งใจ · 2026-09-02 10:05
+          - generic [ref=f26e59]: ตรวจแล้ว วันลาพักร้อนคงเหลือครอบคลุมช่วงที่ขอ ไม่ติดขัดฝั่งฝ่ายบุคคล
+      - generic [ref=f26e60]: เขียนความเห็นใหม่
+      - textbox "เขียนความเห็นใหม่" [ref=f26e61]:
+        - /placeholder: พิมพ์ความเห็นถึงผู้ขอลา
+      - button "ส่งความเห็น" [ref=f26e63] [cursor=pointer]
+    - link "← กลับไปหน้ารายการ" [ref=f26e15] [cursor=pointer]:
+      - /url: leave-requests.html

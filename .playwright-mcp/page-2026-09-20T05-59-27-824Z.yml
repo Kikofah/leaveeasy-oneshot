@@ -1,0 +1,55 @@
+- generic [active] [ref=f23e1]:
+  - generic [ref=f23e3]:
+    - generic [ref=f23e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f23e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f23e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f23e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f23e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "ประเภทการลา" [ref=f23e9] [cursor=pointer]:
+      - /url: leave-types.html
+    - generic [ref=f23e16]:
+      - generic [ref=f23e17]: 👤 สมศรี ตั้งใจ
+      - text: ·
+      - link "ออกจากระบบ" [ref=f23e18] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f23e10]:
+    - heading "รายละเอียดใบลา" [level=1] [ref=f23e11]
+    - generic [ref=f23e12]:
+      - generic [ref=f23e59]:
+        - generic [ref=f23e60]: หัวข้อ
+        - generic [ref=f23e61]: ลาป่วยไปพบแพทย์ตามนัด
+      - generic [ref=f23e62]:
+        - generic [ref=f23e63]: เหตุผลการลา
+        - generic [ref=f23e64]: มีนัดตรวจติดตามอาการกับแพทย์ในช่วงเช้า
+      - generic [ref=f23e65]:
+        - generic [ref=f23e66]: ประเภทการลา
+        - generic [ref=f23e67]: ลาป่วย
+      - generic [ref=f23e68]:
+        - generic [ref=f23e69]: วันที่ลา
+        - generic [ref=f23e70]: 2026-09-22 ถึง 2026-09-22
+      - generic [ref=f23e71]:
+        - generic [ref=f23e72]: ผู้ขอลา
+        - generic [ref=f23e73]: สมชาย ใจดี
+      - generic [ref=f23e74]:
+        - generic [ref=f23e75]: ผู้อนุมัติ
+        - generic [ref=f23e76]: สมหญิง รักงาน
+      - generic [ref=f23e77]:
+        - generic [ref=f23e78]: สถานะ
+        - generic [ref=f23e79]: อนุมัติ
+      - generic [ref=f23e81]:
+        - generic [ref=f23e82]: วันที่ยื่น
+        - generic [ref=f23e83]: 2026-09-18 14:45
+      - paragraph [ref=f23e84]: ใบนี้พิจารณาแล้ว จึงเปลี่ยนสถานะและลบต่อไม่ได้
+    - generic [ref=f23e51]:
+      - heading "ความเห็นการอนุมัติ" [level=2] [ref=f23e52]
+      - paragraph [ref=f23e54]: ยังไม่มีความเห็นในใบนี้
+      - generic [ref=f23e55]: เขียนความเห็นใหม่
+      - textbox "เขียนความเห็นใหม่" [ref=f23e56]:
+        - /placeholder: พิมพ์ความเห็นถึงผู้ขอลา
+      - button "ส่งความเห็น" [ref=f23e58] [cursor=pointer]
+    - link "← กลับไปหน้ารายการ" [ref=f23e15] [cursor=pointer]:
+      - /url: leave-requests.html

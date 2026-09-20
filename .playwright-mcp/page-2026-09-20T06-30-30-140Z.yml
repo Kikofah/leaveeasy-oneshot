@@ -1,0 +1,79 @@
+- generic [active] [ref=f56e1]:
+  - generic [ref=f56e3]:
+    - generic [ref=f56e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f56e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f56e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f56e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f56e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f56e9]:
+      - generic [ref=f56e10]: 👤 สมหญิง รักงาน
+      - text: ·
+      - link "ออกจากระบบ" [ref=f56e11] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f56e12]:
+    - heading "รายการใบลา" [level=1] [ref=f56e13]
+    - paragraph [ref=f56e14]: ใบขอลาทั้งหมดในระบบ กดที่แถวเพื่อดูรายละเอียด
+    - paragraph [ref=f56e15]: ทั้งหมด 8 ใบ
+    - link "+ ยื่นใบลาใหม่" [ref=f56e17] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - table [ref=f56e19]:
+      - rowgroup [ref=f56e20]:
+        - row [ref=f56e21]:
+          - columnheader "หัวข้อ" [ref=f56e22]
+          - columnheader "ประเภทการลา" [ref=f56e23]
+          - columnheader "สถานะ" [ref=f56e24]
+          - columnheader "ผู้ขอลา" [ref=f56e25]
+          - columnheader "วันที่ลา" [ref=f56e26]
+      - rowgroup [ref=f56e27]:
+        - row [ref=f56e28]:
+          - cell "ทดสอบ regression หลังแก้ rules ความปลอดภัย" [ref=f56e29]
+          - cell "ลาป่วย" [ref=f56e30]
+          - cell "รอพิจารณา" [ref=f56e31]
+          - cell "ผู้ทดสอบ ความปลอดภัย 2" [ref=f56e33]
+          - cell "2026-11-10 ถึง 2026-11-10" [ref=f56e34]
+        - row [ref=f56e35]:
+          - cell "ทดสอบ Regression Run - ยื่นใบลาใหม่" [ref=f56e36]
+          - cell "ลาพักร้อน" [ref=f56e37]
+          - cell "รอพิจารณา" [ref=f56e38]
+          - cell "ผู้ทดสอบ Regression Run" [ref=f56e40]
+          - cell "2026-12-01 ถึง 2026-12-02" [ref=f56e41]
+        - row [ref=f56e42]:
+          - cell "ทดสอบยื่นใบลา - Playwright Retest" [ref=f56e43]
+          - cell "ลาพักร้อน" [ref=f56e44]
+          - cell "รอพิจารณา" [ref=f56e45]
+          - cell "ผู้ทดสอบ Playwright Retest" [ref=f56e47]
+          - cell "2026-10-05 ถึง 2026-10-06" [ref=f56e48]
+        - row [ref=f56e49]:
+          - cell "ลาพักร้อนไปเที่ยวกับครอบครัว" [ref=f56e50]
+          - cell "ลาพักร้อน" [ref=f56e51]
+          - cell "รอพิจารณา" [ref=f56e52]
+          - cell "สมชาย ใจดี" [ref=f56e54]
+          - cell "2026-09-07 ถึง 2026-09-09" [ref=f56e55]
+        - row [ref=f56e56]:
+          - cell "ลาป่วยไข้หวัดใหญ่" [ref=f56e57]
+          - cell "ลาป่วย" [ref=f56e58]
+          - cell "อนุมัติ" [ref=f56e59]
+          - cell "สมชาย ใจดี" [ref=f56e61]
+          - cell "2026-08-24 ถึง 2026-08-25" [ref=f56e62]
+        - row [ref=f56e63]:
+          - cell "ลากิจไปทำบัตรประชาชน" [ref=f56e64]
+          - cell "ลากิจ" [ref=f56e65]
+          - cell "รอพิจารณา" [ref=f56e66]
+          - cell "สมศรี ตั้งใจ" [ref=f56e68]
+          - cell "2026-09-15 ถึง 2026-09-15" [ref=f56e69]
+        - row [ref=f56e70]:
+          - cell "ลาพักร้อนช่วงวันหยุดยาว" [ref=f56e71]
+          - cell "ลาพักร้อน" [ref=f56e72]
+          - cell "ไม่อนุมัติ" [ref=f56e73]
+          - cell "สมศรี ตั้งใจ" [ref=f56e75]
+          - cell "2026-10-12 ถึง 2026-10-16" [ref=f56e76]
+        - row [ref=f56e77]:
+          - cell "ลาป่วยไปพบแพทย์ตามนัด" [ref=f56e78]
+          - cell "ลาป่วย" [ref=f56e79]
+          - cell "รอพิจารณา" [ref=f56e80]
+          - cell "สมชาย ใจดี" [ref=f56e82]
+          - cell "2026-09-22 ถึง 2026-09-22" [ref=f56e83]

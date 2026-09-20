@@ -1,0 +1,35 @@
+- generic [active] [ref=f43e1]:
+  - generic [ref=f43e3]:
+    - generic [ref=f43e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f43e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f43e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f43e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f43e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "ประเภทการลา" [ref=f43e9] [cursor=pointer]:
+      - /url: leave-types.html
+  - generic [ref=f43e10]:
+    - heading "ยื่นใบลาใหม่" [level=1] [ref=f43e11]
+    - paragraph [ref=f43e12]: กรอกให้ครบทุกช่อง แล้วกดบันทึก · ใบลาใหม่จะมีสถานะ รอพิจารณา เสมอ
+    - generic [ref=f43e14]:
+      - generic [ref=f43e15]: หัวข้อ
+      - textbox "หัวข้อ" [ref=f43e16]:
+        - /placeholder: เช่น ลาพักร้อนไปเที่ยวกับครอบครัว
+      - generic [ref=f43e17]: เหตุผลการลา
+      - textbox "เหตุผลการลา" [ref=f43e18]:
+        - /placeholder: เล่าเหตุผลสั้น ๆ ให้หัวหน้าเข้าใจ
+      - button "🤖 ให้ AI ช่วยจัดประเภทการลา" [ref=f43e20] [cursor=pointer]
+      - generic [ref=f43e21]: ประเภทการลา
+      - combobox "ประเภทการลา" [ref=f43e22]:
+        - option "— เลือกประเภทการลา —" [selected]
+      - generic [ref=f43e23]: วันที่เริ่มลา
+      - textbox "วันที่เริ่มลา" [ref=f43e24]
+      - generic [ref=f43e25]: วันที่สิ้นสุด
+      - textbox "วันที่สิ้นสุด" [ref=f43e26]
+      - generic [ref=f43e27]:
+        - button "บันทึก" [ref=f43e28] [cursor=pointer]
+        - link "ยกเลิก" [ref=f43e29] [cursor=pointer]:
+          - /url: leave-requests.html

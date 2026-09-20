@@ -1,0 +1,56 @@
+- generic [active] [ref=f57e1]:
+  - generic [ref=f57e3]:
+    - generic [ref=f57e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f57e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f57e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f57e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f57e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f57e16]:
+      - generic [ref=f57e17]: 👤 สมหญิง รักงาน
+      - text: ·
+      - link "ออกจากระบบ" [ref=f57e18] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f57e10]:
+    - heading "รายละเอียดใบลา" [level=1] [ref=f57e11]
+    - generic [ref=f57e12]:
+      - generic [ref=f57e19]:
+        - generic [ref=f57e20]: หัวข้อ
+        - generic [ref=f57e21]: ทดสอบ Regression Run - ยื่นใบลาใหม่
+      - generic [ref=f57e22]:
+        - generic [ref=f57e23]: เหตุผลการลา
+        - generic [ref=f57e24]: เหตุผลทดสอบ regression run เต็มชุด
+      - generic [ref=f57e25]:
+        - generic [ref=f57e26]: ประเภทการลา
+        - generic [ref=f57e27]: ลาพักร้อน
+      - generic [ref=f57e28]:
+        - generic [ref=f57e29]: วันที่ลา
+        - generic [ref=f57e30]: 2026-12-01 ถึง 2026-12-02
+      - generic [ref=f57e31]:
+        - generic [ref=f57e32]: ผู้ขอลา
+        - generic [ref=f57e33]: ผู้ทดสอบ Regression Run
+      - generic [ref=f57e34]:
+        - generic [ref=f57e35]: ผู้อนุมัติ
+        - generic [ref=f57e36]: ยังไม่ได้กำหนดผู้อนุมัติ
+      - generic [ref=f57e37]:
+        - generic [ref=f57e38]: สถานะ
+        - generic [ref=f57e39]: รอพิจารณา
+      - generic [ref=f57e41]:
+        - generic [ref=f57e42]: วันที่ยื่น
+        - generic [ref=f57e43]: 2026-09-20 13:27
+      - button "🤖 ให้ AI สรุปใบลานี้" [ref=f57e46] [cursor=pointer]
+      - generic [ref=f57e47]:
+        - button "อนุมัติ" [ref=f57e48] [cursor=pointer]
+        - button "ไม่อนุมัติ" [ref=f57e49] [cursor=pointer]
+    - generic [ref=f57e50]:
+      - heading "ความเห็นการอนุมัติ" [level=2] [ref=f57e51]
+      - paragraph [ref=f57e53]: ยังไม่มีความเห็นในใบนี้
+      - generic [ref=f57e54]: เขียนความเห็นใหม่
+      - textbox "เขียนความเห็นใหม่" [ref=f57e55]:
+        - /placeholder: พิมพ์ความเห็นถึงผู้ขอลา
+      - button "ส่งความเห็น" [ref=f57e57] [cursor=pointer]
+    - link "← กลับไปหน้ารายการ" [ref=f57e15] [cursor=pointer]:
+      - /url: leave-requests.html

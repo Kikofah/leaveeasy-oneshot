@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "ประเภทการลา" [ref=e9] [cursor=pointer]:
+      - /url: leave-types.html
+  - generic [ref=e10]:
+    - heading "LeaveEasy ระบบขอลาออนไลน์" [level=1] [ref=e11]
+    - paragraph [ref=e12]: พนักงานยื่นใบลา หัวหน้าพิจารณา อนุมัติหรือไม่อนุมัติ แล้วบันทึกผลไว้ที่เดียว
+    - generic [ref=e13]:
+      - heading "หน้าจอของระบบ" [level=2] [ref=e14]
+      - generic [ref=e15]:
+        - link "รายการใบลา" [ref=e16] [cursor=pointer]:
+          - /url: leave-requests.html
+        - link "ยื่นใบลาใหม่" [ref=e17] [cursor=pointer]:
+          - /url: new-leave-request.html
+        - link "แดชบอร์ดสรุป" [ref=e18] [cursor=pointer]:
+          - /url: dashboard.html
+        - link "จัดการประเภทการลา" [ref=e19] [cursor=pointer]:
+          - /url: leave-types.html
+    - generic [ref=e20]:
+      - heading "ผู้ใช้ของระบบ 3 บทบาท" [level=2] [ref=e21]
+      - table [ref=e22]:
+        - rowgroup [ref=e23]:
+          - row [ref=e24]:
+            - columnheader "บทบาท" [ref=e25]
+            - columnheader "รหัสในระบบ" [ref=e26]
+            - columnheader "ทำอะไรได้" [ref=e27]
+        - rowgroup [ref=e28]:
+          - row [ref=e29]:
+            - cell "🙋 ผู้ขอลา" [ref=e30]
+            - cell "employee" [ref=e31]
+            - cell "ยื่นใบลา ดูใบของตัวเอง ลบใบที่ยังรอพิจารณา" [ref=e32]
+          - row [ref=e33]:
+            - cell "✅ ผู้อนุมัติ" [ref=e34]
+            - cell "manager" [ref=e35]
+            - cell "ดูใบลาทุกใบ อนุมัติหรือไม่อนุมัติ เขียนความเห็น" [ref=e36]
+          - row [ref=e37]:
+            - cell "🧾 ฝ่ายบุคคล" [ref=e38]
+            - cell "hr" [ref=e39]
+            - cell "ทำได้ทุกอย่างที่ผู้อนุมัติทำได้ และจัดการประเภทการลา" [ref=e40]
+    - generic [ref=e41]:
+      - heading "สถานะของใบลามี 3 ค่า" [level=2] [ref=e42]
+      - paragraph [ref=e43]:
+        - generic [ref=e44]: รอพิจารณา
+        - text: →
+        - generic [ref=e45]: อนุมัติ
+        - text: หรือ
+        - generic [ref=e46]: ไม่อนุมัติ
+      - paragraph [ref=e47]: ใบที่พิจารณาแล้ว เปลี่ยนสถานะต่อไม่ได้

@@ -1,0 +1,38 @@
+- generic [active] [ref=f32e1]:
+  - generic [ref=f32e3]:
+    - generic [ref=f32e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f32e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f32e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f32e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f32e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f32e9]:
+      - generic [ref=f32e26]: 👤 leaveeasy.tester.security2@example.com
+      - text: ·
+      - link "ออกจากระบบ" [ref=f32e27] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f32e11]:
+    - heading "สมัครสมาชิก" [level=1] [ref=f32e12]
+    - paragraph [ref=f32e13]: สมัครแล้วเข้าสู่ระบบได้ทันที บทบาทเริ่มต้นคือผู้ขอลา
+    - generic [ref=f32e14]:
+      - generic [ref=f32e15]:
+        - generic [ref=f32e16]: ชื่อ-นามสกุล
+        - textbox "ชื่อ-นามสกุล" [ref=f32e17]:
+          - /placeholder: เช่น สมชาย ใจดี
+          - text: ผู้ทดสอบ ความปลอดภัย 2
+        - generic [ref=f32e18]: อีเมล
+        - textbox "อีเมล" [ref=f32e19]:
+          - /placeholder: เช่น somchai@example.com
+          - text: leaveeasy.tester.security2@example.com
+        - generic [ref=f32e20]: รหัสผ่าน
+        - textbox "รหัสผ่าน" [ref=f32e21]:
+          - /placeholder: อย่างน้อย 6 ตัวอักษร
+          - text: Test1234!
+        - button "กำลังสมัคร…" [disabled] [ref=f32e28]
+      - paragraph [ref=f32e24]:
+        - text: มีบัญชีอยู่แล้ว?
+        - link "เข้าสู่ระบบ" [ref=f32e25] [cursor=pointer]:
+          - /url: login.html

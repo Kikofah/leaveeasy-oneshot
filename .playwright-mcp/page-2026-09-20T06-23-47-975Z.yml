@@ -1,0 +1,56 @@
+- generic [active] [ref=f40e1]:
+  - generic [ref=f40e3]:
+    - generic [ref=f40e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f40e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f40e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f40e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f40e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f40e9]:
+      - generic [ref=f40e10]: 👤 สมหญิง รักงาน
+      - text: ·
+      - link "ออกจากระบบ" [ref=f40e11] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f40e12]:
+    - heading "รายละเอียดใบลา" [level=1] [ref=f40e13]
+    - generic [ref=f40e14]:
+      - generic [ref=f40e15]:
+        - generic [ref=f40e16]: หัวข้อ
+        - generic [ref=f40e17]: ลากิจไปทำบัตรประชาชน
+      - generic [ref=f40e18]:
+        - generic [ref=f40e19]: เหตุผลการลา
+        - generic [ref=f40e20]: บัตรประชาชนหมดอายุ ต้องไปทำที่สำนักงานเขตในวันทำการ
+      - generic [ref=f40e21]:
+        - generic [ref=f40e22]: ประเภทการลา
+        - generic [ref=f40e23]: ลากิจ
+      - generic [ref=f40e24]:
+        - generic [ref=f40e25]: วันที่ลา
+        - generic [ref=f40e26]: 2026-09-15 ถึง 2026-09-15
+      - generic [ref=f40e27]:
+        - generic [ref=f40e28]: ผู้ขอลา
+        - generic [ref=f40e29]: สมศรี ตั้งใจ
+      - generic [ref=f40e30]:
+        - generic [ref=f40e31]: ผู้อนุมัติ
+        - generic [ref=f40e32]: ยังไม่ได้กำหนดผู้อนุมัติ
+      - generic [ref=f40e33]:
+        - generic [ref=f40e34]: สถานะ
+        - generic [ref=f40e35]: รอพิจารณา
+      - generic [ref=f40e37]:
+        - generic [ref=f40e38]: วันที่ยื่น
+        - generic [ref=f40e39]: 2026-09-10 16:30
+      - button "🤖 ให้ AI สรุปใบลานี้" [ref=f40e42] [cursor=pointer]
+      - generic [ref=f40e43]:
+        - button "อนุมัติ" [ref=f40e44] [cursor=pointer]
+        - button "ไม่อนุมัติ" [ref=f40e45] [cursor=pointer]
+    - generic [ref=f40e46]:
+      - heading "ความเห็นการอนุมัติ" [level=2] [ref=f40e47]
+      - paragraph [ref=f40e49]: ยังไม่มีความเห็นในใบนี้
+      - generic [ref=f40e50]: เขียนความเห็นใหม่
+      - textbox "เขียนความเห็นใหม่" [ref=f40e51]:
+        - /placeholder: พิมพ์ความเห็นถึงผู้ขอลา
+      - button "ส่งความเห็น" [ref=f40e53] [cursor=pointer]
+    - link "← กลับไปหน้ารายการ" [ref=f40e55] [cursor=pointer]:
+      - /url: leave-requests.html

@@ -1,0 +1,41 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e3]:
+    - generic [ref=f15e4]: 🔧 LeaveEasy
+    - link "หน้าแรก" [ref=f15e5] [cursor=pointer]:
+      - /url: index.html
+    - link "รายการใบลา" [ref=f15e6] [cursor=pointer]:
+      - /url: leave-requests.html
+    - link "ยื่นใบลาใหม่" [ref=f15e7] [cursor=pointer]:
+      - /url: new-leave-request.html
+    - link "แดชบอร์ด" [ref=f15e8] [cursor=pointer]:
+      - /url: dashboard.html
+    - generic [ref=f15e30]:
+      - generic [ref=f15e31]: 👤 ผู้ทดสอบ Playwright Retest
+      - text: ·
+      - link "ออกจากระบบ" [ref=f15e32] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f15e10]:
+    - heading "ยื่นใบลาใหม่" [level=1] [ref=f15e11]
+    - paragraph [ref=f15e12]: กรอกให้ครบทุกช่อง แล้วกดบันทึก · ใบลาใหม่จะมีสถานะ รอพิจารณา เสมอ
+    - generic [ref=f15e14]:
+      - generic [ref=f15e15]: หัวข้อ
+      - textbox "หัวข้อ" [ref=f15e16]:
+        - /placeholder: เช่น ลาพักร้อนไปเที่ยวกับครอบครัว
+      - generic [ref=f15e17]: เหตุผลการลา
+      - textbox "เหตุผลการลา" [ref=f15e18]:
+        - /placeholder: เล่าเหตุผลสั้น ๆ ให้หัวหน้าเข้าใจ
+      - button "🤖 ให้ AI ช่วยจัดประเภทการลา" [ref=f15e20] [cursor=pointer]
+      - generic [ref=f15e21]: ประเภทการลา
+      - combobox "ประเภทการลา" [ref=f15e22]:
+        - option "— เลือกประเภทการลา —" [selected]
+        - option "ลาพักร้อน"
+        - option "ลาป่วย"
+        - option "ลากิจ"
+      - generic [ref=f15e23]: วันที่เริ่มลา
+      - textbox "วันที่เริ่มลา" [ref=f15e24]
+      - generic [ref=f15e25]: วันที่สิ้นสุด
+      - textbox "วันที่สิ้นสุด" [ref=f15e26]
+      - generic [ref=f15e27]:
+        - button "บันทึก" [ref=f15e28] [cursor=pointer]
+        - link "ยกเลิก" [ref=f15e29] [cursor=pointer]:
+          - /url: leave-requests.html
